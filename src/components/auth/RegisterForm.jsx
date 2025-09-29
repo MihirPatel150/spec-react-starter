@@ -21,8 +21,6 @@ const registerSchema = z.object({
   registrationNumber: z.string().optional(),
 });
 
-type RegisterForm = z.infer<typeof registerSchema>;
-
 const departments = [
   "Computer Science",
   "Electrical Engineering", 
@@ -41,7 +39,7 @@ export function RegisterForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<RegisterForm>({
+  const form = useForm({
     resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
@@ -54,7 +52,7 @@ export function RegisterForm() {
 
   const watchRole = form.watch("role");
 
-  const onSubmit = async (data: RegisterForm) => {
+  const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
       await register({

@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 // Protected Route Component
-function ProtectedRoute({ children }: { children: React.ReactNode }) {
+function ProtectedRoute({ children }) {
   const { isAuthenticated, isLoading } = useAuth();
   
   if (isLoading) {
@@ -34,7 +34,7 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 }
 
 // Public Route Component (redirect to dashboard if authenticated)
-function PublicRoute({ children }: { children: React.ReactNode }) {
+function PublicRoute({ children }) {
   const { isAuthenticated, isLoading } = useAuth();
   
   if (isLoading) {

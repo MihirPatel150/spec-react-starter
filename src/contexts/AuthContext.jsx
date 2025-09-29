@@ -1,13 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { User, AuthState, LoginCredentials, RegisterData } from '@/types/auth';
 
-interface AuthContextType extends AuthState {
-  login: (credentials: LoginCredentials) => Promise<void>;
-  register: (data: RegisterData) => Promise<void>;
-  logout: () => void;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -17,8 +10,8 @@ export const useAuth = () => {
   return context;
 };
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [authState, setAuthState] = useState<AuthState>({
+export const AuthProvider = ({ children }) => {
+  const [authState, setAuthState] = useState({
     user: null,
     isAuthenticated: false,
     isLoading: true,
@@ -44,14 +37,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  const login = async (credentials: LoginCredentials) => {
+  const login = async (credentials) => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     
     // Simulate API call - replace with actual authentication
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Mock authentication logic
-    const mockUsers: User[] = [
+    const mockUsers = [
       {
         id: '1',
         email: 'admin@nitc.ac.in',
@@ -91,13 +84,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const register = async (data: RegisterData) => {
+  const register = async (data) => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    const newUser: User = {
+    const newUser = {
       id: Date.now().toString(),
       email: data.email,
       name: data.name,
