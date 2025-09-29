@@ -16,12 +16,14 @@ const loginSchema = z.object({
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
+type LoginForm = z.infer<typeof loginSchema>;
+
 export function LoginForm() {
   const { login, isLoading } = useAuth();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm({
+  const form = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
@@ -29,7 +31,7 @@ export function LoginForm() {
     },
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: LoginForm) => {
     setIsSubmitting(true);
     try {
       await login({

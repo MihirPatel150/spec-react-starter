@@ -1,6 +1,11 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
+interface StatusBadgeProps {
+  status: string;
+  className?: string;
+}
+
 const statusStyles = {
   available: "bg-success text-success-foreground",
   booked: "bg-destructive text-destructive-foreground",
@@ -11,11 +16,11 @@ const statusStyles = {
   cancelled: "bg-muted text-muted-foreground",
 };
 
-export function StatusBadge({ status, className }) {
+export function StatusBadge({ status, className }: StatusBadgeProps) {
   return (
     <Badge 
       className={cn(
-        statusStyles[status] || "bg-muted text-muted-foreground",
+        statusStyles[status as keyof typeof statusStyles] || "bg-muted text-muted-foreground",
         "capitalize font-medium",
         className
       )}

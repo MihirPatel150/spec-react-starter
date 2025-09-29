@@ -1,6 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { User, AuthState, LoginCredentials, RegisterData } from '@/types/auth';
 
-const AuthContext = createContext(undefined);
+interface AuthContextType extends AuthState {
+  login: (credentials: LoginCredentials) => Promise<void>;
+  register: (data: RegisterData) => Promise<void>;
+  logout: () => void;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -10,8 +17,8 @@ export const useAuth = () => {
   return context;
 };
 
-export const AuthProvider = ({ children }) => {
-  const [authState, setAuthState] = useState({
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [authState, setAuthState] = useState<AuthState>({
     user: null,
     isAuthenticated: false,
     isLoading: true,
@@ -37,14 +44,14 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = async (credentials) => {
+  const login = async (credentials: LoginCredentials) => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     
     // Simulate API call - replace with actual authentication
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Mock authentication logic
-    const mockUsers = [
+    const mockUsers: User[] = [
       {
         id: '1',
         email: 'admin@nitc.ac.in',
@@ -84,13 +91,13 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (data) => {
+  const register = async (data: RegisterData) => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    const newUser = {
+    const newUser: User = {
       id: Date.now().toString(),
       email: data.email,
       name: data.name,
