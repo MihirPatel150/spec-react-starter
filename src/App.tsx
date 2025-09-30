@@ -10,6 +10,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import Resources from "./pages/Resources";
+import Requests from "./pages/Requests";
+import History from "./pages/History";
+import RequestResource from "./pages/RequestResource";
+import AdminResources from "./pages/admin/AdminResources";
+import AdminRequests from "./pages/admin/AdminRequests";
+import AdminSchedule from "./pages/admin/AdminSchedule";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminSettings from "./pages/admin/AdminSettings";
 
 const queryClient = new QueryClient();
 
@@ -65,12 +74,18 @@ const App = () => (
             <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
             <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            {/* Placeholder routes - implement these pages next */}
-            <Route path="/resources" element={<ProtectedRoute><div>Resources Page (Coming Soon)</div></ProtectedRoute>} />
-            <Route path="/requests" element={<ProtectedRoute><div>Requests Page (Coming Soon)</div></ProtectedRoute>} />
-            <Route path="/history" element={<ProtectedRoute><div>History Page (Coming Soon)</div></ProtectedRoute>} />
-            <Route path="/request-resource" element={<ProtectedRoute><div>Request Resource Page (Coming Soon)</div></ProtectedRoute>} />
-            <Route path="/admin/*" element={<ProtectedRoute><div>Admin Pages (Coming Soon)</div></ProtectedRoute>} />
+            {/* Student/Faculty Routes */}
+            <Route path="/resources" element={<ProtectedRoute><Resources /></ProtectedRoute>} />
+            <Route path="/requests" element={<ProtectedRoute><Requests /></ProtectedRoute>} />
+            <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+            <Route path="/request-resource" element={<ProtectedRoute><RequestResource /></ProtectedRoute>} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin/resources" element={<ProtectedRoute><AdminResources /></ProtectedRoute>} />
+            <Route path="/admin/requests" element={<ProtectedRoute><AdminRequests /></ProtectedRoute>} />
+            <Route path="/admin/schedule" element={<ProtectedRoute><AdminSchedule /></ProtectedRoute>} />
+            <Route path="/admin/users" element={<ProtectedRoute><AdminUsers /></ProtectedRoute>} />
+            <Route path="/admin/settings" element={<ProtectedRoute><AdminSettings /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
