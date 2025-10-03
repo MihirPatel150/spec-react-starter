@@ -15,11 +15,24 @@ import { CalendarIcon, Server } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mockResources = [
-  { id: 1, name: "GPU Server A1", type: "GPU Server" },
-  { id: 2, name: "GPU Server A2", type: "GPU Server" },
-  { id: 3, name: "ML Workstation 1", type: "Workstation" },
-  { id: 5, name: "GPU Cluster Node 1", type: "GPU Server" },
-  { id: 6, name: "Oscilloscope DSO-X 3024A", type: "Lab Equipment" },
+  { id: 1, name: "Electron Microscope SEM-500", type: "Lab Instrument" },
+  { id: 2, name: "FTIR Spectrometer", type: "Lab Instrument" },
+  { id: 3, name: "NMR Spectrometer 400MHz", type: "Lab Instrument" },
+  { id: 4, name: "Digital Oscilloscope DSO-X 3024A", type: "Lab Instrument" },
+  { id: 5, name: "HPLC System", type: "Lab Instrument" },
+  { id: 6, name: "CNC Milling Machine", type: "Workshop Tool" },
+  { id: 7, name: "Industrial 3D Printer", type: "Workshop Tool" },
+  { id: 8, name: "CO2 Laser Cutter", type: "Workshop Tool" },
+  { id: 9, name: "Universal Testing Machine", type: "Workshop Tool" },
+  { id: 10, name: "PCR Thermal Cycler", type: "Lab Instrument" },
+  { id: 11, name: "High-Speed Centrifuge", type: "Lab Instrument" },
+  { id: 12, name: "Arduino Development Kit Pro", type: "Workshop Tool" },
+  { id: 13, name: "Professional DSLR Camera", type: "General Equipment" },
+  { id: 14, name: "HD Projector System", type: "General Equipment" },
+  { id: 15, name: "Thermal Imaging Camera", type: "General Equipment" },
+  { id: 16, name: "Professional Drone DJI Phantom 4", type: "General Equipment" },
+  { id: 17, name: "Optical Microscope Trinocular", type: "Lab Instrument" },
+  { id: 18, name: "UV-Vis Spectrophotometer", type: "Lab Instrument" },
 ];
 
 export default function RequestResource() {
