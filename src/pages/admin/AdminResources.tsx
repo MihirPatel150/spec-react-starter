@@ -151,10 +151,9 @@ export default function AdminResources() {
                       <SelectValue placeholder="Select type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="gpu">GPU Server</SelectItem>
-                      <SelectItem value="workstation">Workstation</SelectItem>
-                      <SelectItem value="server">Server</SelectItem>
-                      <SelectItem value="equipment">Lab Equipment</SelectItem>
+                      <SelectItem value="lab-instrument">Lab Instrument</SelectItem>
+                      <SelectItem value="workshop-tool">Workshop Tool</SelectItem>
+                      <SelectItem value="general-equipment">General Equipment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
