@@ -62,7 +62,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       {
         id: '2',
         email: 'student@nitc.ac.in',
-        name: 'John Doe',
+        name: 'Mihir',
         role: 'student',
         department: 'Computer Science',
         registrationNumber: 'CS2021001'
@@ -70,7 +70,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       {
         id: '3',
         email: 'faculty@nitc.ac.in',
-        name: 'Dr. Jane Smith',
+        name: 'Dr. Munnawar',
         role: 'faculty',
         department: 'Computer Science'
       }

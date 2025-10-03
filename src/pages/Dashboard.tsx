@@ -46,14 +46,14 @@ const mockData = {
       utilizationRate: 72,
     },
     pendingRequests: [
-      { id: "1", user: "John Doe", resource: "FTIR Spectrometer", date: "2025-09-30", duration: 4 },
-      { id: "2", user: "Jane Smith", resource: "3D Printer", date: "2025-10-01", duration: 2 },
-      { id: "3", user: "Bob Wilson", resource: "PCR Machine", date: "2025-10-02", duration: 3 },
+      { id: "1", user: "Mihir", resource: "FTIR Spectrometer", date: "2025-09-30", duration: 4 },
+      { id: "2", user: "Munnawar", resource: "3D Printer", date: "2025-10-01", duration: 2 },
+      { id: "3", user: "Saurabh", resource: "PCR Machine", date: "2025-10-02", duration: 3 },
     ],
     recentActivity: [
-      { id: "1", action: "Request approved", user: "Alice Johnson", resource: "Optical Microscope", time: "2 hours ago" },
+      { id: "1", action: "Request approved", user: "Mihir", resource: "Optical Microscope", time: "2 hours ago" },
       { id: "2", action: "New resource added", resource: "Thermal Camera", time: "4 hours ago" },
-      { id: "3", action: "Request rejected", user: "Mark Brown", resource: "Laser Cutter", time: "6 hours ago" },
+      { id: "3", action: "Request rejected", user: "Munnawar", resource: "Laser Cutter", time: "6 hours ago" },
     ],
   },
 };
