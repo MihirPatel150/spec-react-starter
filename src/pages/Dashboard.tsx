@@ -28,13 +28,13 @@ const mockData = {
       hoursUsed: 45.5,
     },
     recentRequests: [
-      { id: "1", resource: "GPU Server 01", status: "approved", date: "2025-09-28", duration: 2 },
+      { id: "1", resource: "Electron Microscope", status: "approved", date: "2025-09-28", duration: 2 },
       { id: "2", resource: "3D Printer", status: "pending", date: "2025-09-29", duration: 1 },
-      { id: "3", resource: "Lab Room A", status: "rejected", date: "2025-09-27", duration: 3 },
+      { id: "3", resource: "NMR Spectrometer", status: "rejected", date: "2025-09-27", duration: 3 },
     ],
     upcomingBookings: [
-      { id: "1", resource: "GPU Server 01", date: "2025-09-30", time: "14:00-16:00" },
-      { id: "2", resource: "Conference Room", date: "2025-10-01", time: "10:00-12:00" },
+      { id: "1", resource: "Electron Microscope", date: "2025-09-30", time: "14:00-16:00" },
+      { id: "2", resource: "CNC Machine", date: "2025-10-01", time: "10:00-12:00" },
     ],
   },
   admin: {
@@ -46,14 +46,14 @@ const mockData = {
       utilizationRate: 72,
     },
     pendingRequests: [
-      { id: "1", user: "John Doe", resource: "GPU Server 02", date: "2025-09-30", duration: 4 },
+      { id: "1", user: "John Doe", resource: "FTIR Spectrometer", date: "2025-09-30", duration: 4 },
       { id: "2", user: "Jane Smith", resource: "3D Printer", date: "2025-10-01", duration: 2 },
-      { id: "3", user: "Bob Wilson", resource: "Lab Room B", date: "2025-10-02", duration: 3 },
+      { id: "3", user: "Bob Wilson", resource: "PCR Machine", date: "2025-10-02", duration: 3 },
     ],
     recentActivity: [
-      { id: "1", action: "Request approved", user: "Alice Johnson", resource: "GPU Server 01", time: "2 hours ago" },
-      { id: "2", action: "New resource added", resource: "Projector 05", time: "4 hours ago" },
-      { id: "3", action: "Request rejected", user: "Mark Brown", resource: "Lab Room C", time: "6 hours ago" },
+      { id: "1", action: "Request approved", user: "Alice Johnson", resource: "Optical Microscope", time: "2 hours ago" },
+      { id: "2", action: "New resource added", resource: "Thermal Camera", time: "4 hours ago" },
+      { id: "3", action: "Request rejected", user: "Mark Brown", resource: "Laser Cutter", time: "6 hours ago" },
     ],
   },
 };
